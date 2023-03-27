@@ -9,13 +9,6 @@ root.render(
   <React.StrictMode>
     <Styles>
       <Router>
-        {/* {publicRoutes.map((route, index) => {
-          return (
-            <div key={index}>
-              <Link to={route.path}>{route.name}</Link>
-            </div>
-          );
-        })} */}
         <Routes>
           {publicRoutes.map((route, index) => {
             const Page = route.component;
