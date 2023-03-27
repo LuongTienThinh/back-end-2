@@ -1,13 +1,11 @@
-import Header from "../../components/Header";
-import Footer from "../../components/Footer";
+import Layout from "../../components/Layout";
+import styles from "./Home.module.scss";
 
 function Home() {
   return (
-    <>
-      <Header />
-      <h1>Trang Home</h1>
-      <Footer />
-    </>
+    <Layout>
+      <span className={styles['content']}>Home content</span>
+    </Layout>
   );
 }
 
