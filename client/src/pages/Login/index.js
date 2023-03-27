@@ -5,6 +5,7 @@ function Login() {
   return (
     <Layout>
       <span className={styles['content']}>Login content</span>
+      <span>Hello world</span>
     </Layout>
   );
 }
