@@ -1,15 +1,15 @@
 import Header from "../../components/Layout/Header";
 import Footer from "../../components/Layout/Footer";
-import styles from "./Login.module.scss";
+import styles from "./Register.module.scss";
 
-function Login() {
+function Register() {
   return (
     <>
       <Header />
-      <h1>Login page</h1>
+      <h1>Register page</h1>
       <Footer />
     </>
   );
 }
 
-export default Login;
+export default Register;

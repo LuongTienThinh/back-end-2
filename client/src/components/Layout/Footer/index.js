@@ -1,13 +1,7 @@
 import styles from "./Footer.module.scss";
 
 function Footer() {
-  return (
-    <div className={styles['footer-area']}>
-      <div className="container">
-        <div className={styles['footer-content']}>Footer</div>
-      </div>
-    </div>
-  );
+  return <footer></footer>;
 }
 
 export default Footer;

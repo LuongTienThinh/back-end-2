@@ -1,13 +1,13 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import ReactDOM from "react-dom/client";
-import Styles from "./components/Styles";
+import BaseStyle from "./components/BaseStyle";
 import { publicRoutes } from "./routes";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <Styles>
+    <BaseStyle>
       <Router>
         <Routes>
           {publicRoutes.map((route, index) => {
@@ -16,6 +16,6 @@ root.render(
           })}
         </Routes>
       </Router>
-    </Styles>
+    </BaseStyle>
   </React.StrictMode>
 );
