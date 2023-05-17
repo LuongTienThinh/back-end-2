@@ -2,12 +2,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 :root {
-    --primary-color: #17ab00;
+    --primary-color: #00294b;
     --text-color: #333333;
-    --white-color: #eeeeee;
-    --gray-color: #888888;
+    --text-color-2: #ebdac1;
+    --text-color-3: #cccccc;
+    --white-color: #ffffff;
+    --gray-color: #bdbdbd;
+    --filter-color: #4a98cb;
     --orange-color: #ffb300;
-
+    --placeholder-color: #999999;
+    --outline-input-color: #3b71ca;
     --transition: ease .5s;
 }
 
@@ -48,8 +52,42 @@ a {
     color: var(--text-color);
 }
 
+a:hover {
+    color: var(--text-color);
+}
+
+button {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
+}
+
 .container {
     max-width: 1200px;
     width: 100%;
     margin: 0 auto;
 }
+
+
+// 
+
+@media screen and (max-width: 1349px) {
+    .container {
+        max-width: 1000px;
+    }
+}
+
+@media screen and (max-width: 1199px) {
+    .container {
+        max-width: 900px;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .container {
+        max-width: 95%;
+    }
+}
+
