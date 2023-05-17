@@ -1,12 +1,12 @@
 import Home from '../pages/Home';
-import Login from '../pages/Login';
-import Register from '../pages/Register';
+import Irregular from '../pages/Irregular';
+import Note from '../pages/Note';
 
 // Public routes
 const publicRoutes = [
   { name: "Home", path: '/', component: Home },
-  { name: "Login", path: '/login', component: Login },
-  { name: "Register", path: '/register', component: Register },
+  { name: "Irregular", path: '/irregular-verb', component: Irregular },
+  { name: "Note", path: '/note', component: Note },
 ];
 
 const privateRoutes = [];

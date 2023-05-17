@@ -1,19 +1,159 @@
 .header-area {
-    background: var(--primary-color);
     font-size: 1.5rem;
     color: var(--text-color);
 }
 
-.wrapper {
+// ---- Account ----
+
+.account {
+    text-align: end;
+    background-color: #b0d5ee;
+    padding: 10px 0;
+}
+
+.account .split {
+    margin: 0 5px;
+    cursor: default;
+}
+
+// ---- Login and Register ----
+
+.link-login,
+.link-register {
+    cursor: pointer;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba($color: #000000, $alpha: .3);
+    overflow: hidden;
+    transition: var(--transition);
+    display: none;
+    z-index: 100;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+}
+
+.login-wrapper,
+.register-wrapper {
+    background: var(--white-color);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.4rem;
+    padding: 30px 60px;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    justify-content: center;
+}
+
+.login-area .login-title,
+.register-area .register-title {
+    font-size: 3rem;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.login-area .user-account,
+.login-area .btn,
+.register-area .user-account,
+.register-area .btn {
+    text-align: center;
+    margin-top: 25px;
+}
+
+.user-account input {
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: 1px solid var(--gray-color);
+    width: 300px;
+}
+
+.user-account>* {
+    margin-top: 15px;
+    position: relative;
+}
+
+.user-account input:focus {
+    border: 1px solid var(--white-color);
+    outline: 1px solid var(--outline-input-color);
+}
+
+.user-account input:focus+.form-label,
+.user-account input:valid+.form-label {
+    transform: scale(.8) translateY(-50%);
+    top: 0;
+    transform-origin: 0 0;
+    background-color: #ffffff;
+    padding: 0 5px;
+    left: 14px;
+}
+
+.user-account .form-label {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    color: var(--placeholder-color);
+    pointer-events: none;
+    transition: .2s;
+}
+
+.login-area .btn button,
+.register-area .btn button {
+    display: inline-block;
+    color: var(--white-color);
+    font-weight: 600;
+    background-color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: var(--transition);
+
+    &:hover {
+        transform: scale(1.1);
+    }
+}
+
+.btn .btn-login,
+.btn .btn-register {
+    margin-right: 15px;
+}
+
+.btn-close {
+    font-size: 2rem;
+    position: absolute;
+    top: 5px;
+    right: 8px;
+    cursor: pointer;
+}
+
+// ---- Top header ----
+
+.top-header {
+    background: var(--primary-color);
+}
+
+.nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
+.nav .icon {
+    margin-right: 5px;
+}
+
 // ---- Logo ----
 
 .logo {
-    width: 15%;
+    width: 20%;
     padding: 10px 0;
 }
 
@@ -23,107 +163,118 @@
 
 // ---- Search bar ----
 
-.search .search-by {
-    display: inline-block;
-    position: relative;
-}
-
-.search .search-by .dropdown-icon {
-    position: absolute;
-    font-size: 1rem;
-    top: 50%;
-    right: 15px;
-    transform: translateY(-50%);
-}
-
-.search .search-by select {
-    position: relative;
-    appearance: none;
-    padding: 10px 30px 10px 15px;
-    border-right: 1px solid var(--gray-color);
-    border-radius: 5px 0 0 5px;
+.search {
+    width: 40%;
 }
 
 .search input {
     padding: 10px 15px;
-    border-radius: 0 5px 5px 0;
-    width: 400px;
-}
-
-// ---- Notification ----
-
-.notice {
-    position: relative;
-}
-
-.notice:hover .notice-list {
-    width: unset;
-    height: unset;
-    opacity: 1;
-}
-
-.notice .notice-open {
-    cursor: pointer;
-}
-
-.notice-open .notice-icon {
-    margin-right: 5px;
-}
-
-.notice .notice-list {
-    font-size: 1.2rem;
-    position: absolute;
-    top: calc(100% + 2px);
-    right: 0;
-    background: var(--white-color);
     border-radius: 5px;
-    overflow: hidden;
-    transition: var(--transition);
-    width: 0;
-    height: 0;
-    opacity: 0;
+    width: 100%;
 }
 
-.notice-list .notice-item {
-    width: 350px;
-    display: flex;
-    align-items: center;
-    padding: 10px;
-    background-color: var(--white-color);
+// ---- Irregular verb ----
+
+.irregular .irregular-open,
+.note .note-open {
+    cursor: pointer;
+    font-size: 1.8rem;
 }
 
-.notice-list .notice-item:not(:first-child) {
-    border-top: 1px solid var(--gray-color);
+.irregular a {
+    color: var(--text-color-2);
 }
 
-.notice-list .notice-item img {
-    width: 20%;
+// ---- Note ----
+.note a {
+    color: var(--text-color-2);
 }
 
-.notice-list .notice-item .content {
-    min-height: 40px;
-    max-height: 80px;
-    width: 80%;
-    padding-left: 10px;
-    overflow: auto;
+
+
+// ----------- RESPONSIVE -----------
+
+@media screen and (max-width: 1199px) {
+    .search {
+        width: 40%;
+    }
 }
 
-.notice-list .notice-item .content::-webkit-scrollbar {
-    width: 0;
+@media screen and (max-width: 991px) {
+    .search {
+        width: 50%;
+    }
+
+    .irregular .irregular-open,
+    .note .note-open {
+        font-size: 2.5rem;
+    }
+
+    .irregular .irregular-open>span,
+    .note .note-open>span {
+        display: none;
+    }
 }
 
-.notice-item .content .title {
-    text-transform: uppercase;
-    font-weight: 600;
+@media screen and (max-width: 767px) {
+
+    .login-wrapper,
+    .register-wrapper {
+        font-size: 1.2rem;
+        padding: 20px 50px;
+    }
+
+    .login-area .login-title,
+    .register-area .register-title {
+        font-size: 2.8rem;
+        text-align: center;
+        text-transform: uppercase;
+        font-weight: 600;
+    }
+
+    .user-account input {
+        width: 250px;
+    }
+
+    .irregular .irregular-open,
+    .note .note-open {
+        font-size: 2.2rem;
+    }
 }
 
-.notice-item .content .description {
-    margin-top: 5px;
+@media screen and (max-width: 639px) {
+    .header-area {
+        font-size: 1.3rem;
+        color: var(--text-color);
+    }
+
+    .irregular .irregular-open,
+    .note .note-open {
+        font-size: 2rem;
+    }
 }
 
-// ---- Account ----
+@media screen and (max-width: 539px) {
 
-.account span{
-    padding: 0 5px;
-    cursor: default;
+    .login-wrapper,
+    .register-wrapper {
+        font-size: 1.1rem;
+    }
+
+    .login-area .login-title,
+    .register-area .register-title {
+        font-size: 2.5rem;
+        text-align: center;
+        text-transform: uppercase;
+        font-weight: 600;
+    }
+
+    .search input {
+        padding: 6px 12px;
+    }
+
+    .irregular .irregular-open,
+    .note .note-open {
+        font-size: 1.8rem;
+    }
 }
