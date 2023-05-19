@@ -1,0 +1,11 @@
+------ Run Seeder ------
+
+php artisan db:seed --class=IrregularSeeder
+
+
+------ Create file ------
+
+php artisan make:controller {name}Controller --resource
+php artisan make:model {name}
+php artisan make:seeder {name}Seeder
+php artisan make:migration create_{name}_table --create={name}
