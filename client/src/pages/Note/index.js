@@ -18,21 +18,18 @@ function Note() {
                         <table>
                             <thead>
                                 <tr>
+                                    <th className={cx('number-ordered')}>No.</th>
                                     <th>Word</th>
                                     <th>Parts of Speech</th>
-                                    <th>IPA Pronunciation</th>
-                                    <th>Meaning</th>
+                                    <th className={cx('meaning')}>Meaning</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>Hello</td>
-                                    <td>Noun</td>
-                                    <td>/hɛˈləʊ/</td>
-                                    <td>
-                                        Hello có nghĩa là "xin chào" hoặc "chào bạn". Nó là một cách chào hỏi thông
-                                        thường được sử dụng để giao tiếp và chào đón người khác.
-                                    </td>
+                                    <td className={cx('number-ordered')}></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td className={cx('meaning')}></td>
                                 </tr>
                             </tbody>
                         </table>
