@@ -1,5 +1,5 @@
 import classNames from 'classnames/bind';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 import Header from '../../components/Layout/Header';
 import Footer from '../../components/Layout/Footer';
@@ -13,6 +13,9 @@ const cx = classNames.bind(styles);
 const cbase = classNames.bind(base);
 
 function Home() {
+
+    const [listGame, setListGame] = useState([]);
+
     useEffect(() => {
         const handleFilter = (typeFilter) => {
             const lists = document.querySelectorAll(`.${cx(`${typeFilter}-item`)}`);
@@ -28,6 +31,14 @@ function Home() {
         handleFilter('topic');
         handleFilter('action');
     });
+
+    useEffect(() => {
+        fetch(`http://127.0.0.1:8000/api/list-game`)
+            .then((response) => response.json())
+            .then((result) => {
+                setListGame(result);
+            });
+    }, [])
 
     return (
         <>
@@ -70,11 +81,7 @@ function Home() {
             <section className={cx('list-game')}>
                 <div className={cbase('container')}>
                     <ListGame
-                        listGame={[
-                            { id: '1', title: 'Irregular Verb', image: './irregular.jpg' },
-                            { id: '2', title: 'Part Of Speech', image: './part-of-speech.jpg' },
-                            { id: '3', title: 'Sentence', image: './sentence.jpg' },
-                        ]}
+                        listGame={listGame}
                     />
                 </div>
             </section>

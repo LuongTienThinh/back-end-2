@@ -11,7 +11,7 @@ function ListGame({ listGame }) {
     return (
         <div className={cx('list-game')}>
             {listGame.map((e, i) => (
-                <Game key={i} id={e.id} image={e.image} title={e.title} />
+                <Game key={i} game={e} />
             ))}
         </div>
     );

@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Irregular;
+use Illuminate\Support\Facades\DB;
+use App\Models\User;
+use App\Models\Game;
 
-class IrregularController extends Controller
+class UserGameController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -83,14 +85,16 @@ class IrregularController extends Controller
         //
     }
 
-    public function getIrregulars()
+    public function getScore($user_id, $game_id)
     {
-        $data = Irregular::all();
-        return response()->json($data);
-    }
-
-    public function getIrregularsPaginate() {
-        $data = Irregular::paginate(25);
+        //
+        $data = DB::table('user_game')
+            ->join('user', 'user.id', '=', 'user_game.user_id')
+            ->join('game', 'game.id', '=', 'user_game.game_id')
+            ->where('user_id', '=', $user_id)
+            ->where('game_id', '=', $game_id)
+            ->take(10)
+            ->get();
         return response()->json($data);
     }
 }

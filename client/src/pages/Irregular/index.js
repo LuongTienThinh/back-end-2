@@ -16,7 +16,7 @@ function Irregular() {
     const [perPage, setPerPage] = useState(0);
 
     useEffect(() => {
-        fetch(`http://127.0.0.1:8000/api/irregularPaginate?page=${currentPage}`)
+        fetch(`http://127.0.0.1:8000/api/irregular-paginate?page=${currentPage}`)
             .then((response) => response.json())
             .then(({ data, last_page, per_page }) => {
                 setIrregulars(data);

@@ -1,6 +1,9 @@
 <?php
 
 use App\Http\Controllers\IrregularController;
+use App\Http\Controllers\GameController;
+use App\Http\Controllers\UserGameController;
+use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -20,5 +23,10 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('/irregular', [IrregularController::class, 'getIrregulars']);
+Route::get('/irregular-paginate', [IrregularController::class, 'getIrregularsPaginate']);
+Route::get('/list-game', [GameController::class, 'getListGame']);
+Route::get('/game-{id}', [GameController::class, 'show']);
+Route::get('/user-{id}', [UserController::class, 'show']);
+Route::get('/history-{user_id}-{game_id}', [UserGameController::class, 'getScore']);
 
-Route::get('/irregularPaginate', [IrregularController::class, 'getIrregularsPaginate']);
+

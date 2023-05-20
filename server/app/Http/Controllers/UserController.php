@@ -1,11 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\User;
 
 use Illuminate\Http\Request;
-use App\Models\Irregular;
 
-class IrregularController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -47,6 +47,8 @@ class IrregularController extends Controller
     public function show($id)
     {
         //
+        $data = User::find($id);
+        return response()->json($data);
     }
 
     /**
@@ -81,16 +83,5 @@ class IrregularController extends Controller
     public function destroy($id)
     {
         //
-    }
-
-    public function getIrregulars()
-    {
-        $data = Irregular::all();
-        return response()->json($data);
-    }
-
-    public function getIrregularsPaginate() {
-        $data = Irregular::paginate(25);
-        return response()->json($data);
     }
 }

@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Game;
 use Illuminate\Http\Request;
-use App\Models\Irregular;
 
-class IrregularController extends Controller
+class GameController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -47,6 +47,8 @@ class IrregularController extends Controller
     public function show($id)
     {
         //
+        $data = Game::find($id);
+        return response()->json($data);
     }
 
     /**
@@ -83,14 +85,9 @@ class IrregularController extends Controller
         //
     }
 
-    public function getIrregulars()
+    public function getListGame()
     {
-        $data = Irregular::all();
-        return response()->json($data);
-    }
-
-    public function getIrregularsPaginate() {
-        $data = Irregular::paginate(25);
+        $data = Game::all();
         return response()->json($data);
     }
 }
