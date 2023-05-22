@@ -1,7 +1,7 @@
 import classNames from 'classnames/bind';
 
 import Game from '../Game';
-import base from '../../BaseStyle/BaseStyle.module.scss';
+import base from '~/components/BaseStyle/BaseStyle.module.scss';
 import styles from './ListGame.module.scss';
 
 const cx = classNames.bind(styles);

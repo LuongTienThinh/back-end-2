@@ -1,11 +1,11 @@
 import classNames from 'classnames/bind';
 import { useEffect, useState } from 'react';
 
-import Header from '../../components/Layout/Header';
-import Footer from '../../components/Layout/Footer';
-import Game from '../../components/Layout/Game';
-import ListGame from '../../components/Layout/ListGame';
-import base from '../../components/BaseStyle/BaseStyle.module.scss';
+import Header from '~/components/Layout/Header';
+import Footer from '~/components/Layout/Footer';
+import Game from '~/components/Layout/Game';
+import ListGame from '~/components/Layout/ListGame';
+import base from '~/components/BaseStyle/BaseStyle.module.scss';
 import styles from './Home.module.scss';
 import images from './image';
 

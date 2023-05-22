@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { FaFacebookF, FaTwitter, FaPinterestP, FaGooglePlusG } from 'react-icons/fa';
 
-import base from '../../BaseStyle/BaseStyle.module.scss';
+import base from '~/components/BaseStyle/BaseStyle.module.scss';
 import styles from './Footer.module.scss';
 import images from './image';
 

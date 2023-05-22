@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBell } from '@fortawesome/free-solid-svg-icons';
 
 import Notify from '../Notify';
-import base from '../../BaseStyle/BaseStyle.module.scss';
+import base from '~/components/BaseStyle/BaseStyle.module.scss';
 import styles from './ListNotify.module.scss';
 
 const cx = classNames.bind(styles);

@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClose, faNoteSticky, faBook } from '@fortawesome/free-solid-svg-icons';
 
 import ListNotify from '../ListNotify';
-import base from '../../BaseStyle/BaseStyle.module.scss';
+import base from '~/components/BaseStyle/BaseStyle.module.scss';
 import styles from './Header.module.scss';
 import images from './image';
 

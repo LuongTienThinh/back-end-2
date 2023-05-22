@@ -1,8 +1,8 @@
 import classNames from 'classnames/bind';
 
-import Header from '../../components/Layout/Header';
-import Footer from '../../components/Layout/Footer';
-import base from '../../components/BaseStyle/BaseStyle.module.scss';
+import Header from '~/components/Layout/Header';
+import Footer from '~/components/Layout/Footer';
+import base from '~/components/BaseStyle/BaseStyle.module.scss';
 import styles from './Irregular.module.scss';
 import { useEffect, useState, use } from 'react';
 

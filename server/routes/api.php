@@ -4,8 +4,11 @@ use App\Http\Controllers\IrregularController;
 use App\Http\Controllers\GameController;
 use App\Http\Controllers\UserGameController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\NoteController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+
+use App\Models\Note;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,5 +31,15 @@ Route::get('/list-game', [GameController::class, 'getListGame']);
 Route::get('/game-{id}', [GameController::class, 'show']);
 Route::get('/user-{id}', [UserController::class, 'show']);
 Route::get('/history-{user_id}-{game_id}', [UserGameController::class, 'getScore']);
+Route::get('/notes', [NoteController::class, 'index']);
 
 
+
+
+Route::post('/notes', function (Request $request) {
+    $data = $request->all();
+
+    $notes = Note::create($data);
+
+    return response()->json($notes);
+});
